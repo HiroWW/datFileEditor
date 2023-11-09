@@ -34,16 +34,19 @@ for key, value in data.items():
 plt.figure(figsize=(10, 5))
 
 # First plot
-plt.plot(x_values, y1_values, label='Y1 Values', color='blue', marker='o')
+plt.plot(x_values, y1_values, label='ALMwing : AoA', color='blue', marker='o')
 
 # Second plot
-plt.plot(x_values, y2_values, label='Y2 Values', color='red', marker='x')
+plt.plot(x_values, y2_values, label='RANS wing : CL', color='red', marker='x')
 
 # Adding titles and labels
-plt.title('Comparison of Y1 and Y2 Values')
-plt.xlabel('X Values (%)')
-plt.ylabel('Y Values (%)')
+# plt.title('Comparison of Y1 and Y2 Values')
+plt.xlabel('chord (%)')
+plt.ylabel('value / RANS (%)')
 plt.legend()
+
+# 縦軸100%の位置に薄い直線を引く
+plt.axhline(100, color='gray', linewidth=0.5)
 
 # Show the plot
 plt.show()
