@@ -28,3 +28,5 @@ plt.axis('equal')  # 同じスケールで表示
 # グラフを表示する
 plt.show()
 
+# グラフを保存する
+plt.savefig('naca_positions.png')
