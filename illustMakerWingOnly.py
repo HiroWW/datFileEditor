@@ -7,6 +7,7 @@ wing_shape = np.loadtxt('wing_shape.dat')
 
 # 座標リストを設定する
 coordinates  = [(0, 0),  (0, 1),   (1, 0),  (-1, 0),  (0, -1),  (1/math.sqrt(2), 1/math.sqrt(2)),  (-1/math.sqrt(2), 1/math.sqrt(2)),  (1/math.sqrt(2), -1/math.sqrt(2)),  (-1/math.sqrt(2), -1/math.sqrt(2))]   # ここに翼の形を配置する座標を入れます
+# coordinates =  [(0, 0),  (1, 0)]
 # large_points = [(2, 3), (4, 5)]  # ここに大きめの点を配置する座標を入れます
 
 # 各座標に翼の形状を配置する
@@ -21,5 +22,5 @@ for x, y in coordinates:
 plt.axis('equal')  # 同じスケールで表示
 
 # グラフを表示する
-plt.show()
 plt.savefig('naca_positions.png')
+plt.show()
