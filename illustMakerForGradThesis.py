@@ -11,6 +11,7 @@ radii = [1, 2, 3]  # この半径のリストを使用者が提供する
 
 # 色のリスト（半径ごとに異なる色を割り当てる）
 colors = ['blue', 'red', 'green']
+labels = []
 
 # 全ての座標に翼を配置する関数
 def plot_wing_at_coordinates(coordinates, color):
@@ -27,7 +28,8 @@ for radius, color in zip(radii, colors):
     circle_points = calculate_circle_points(radius)
     
     # 翼を配置（色を半径ごとに変更）
-    plot_wing_at_coordinates(circle_points, color)
+    plot_wing_at_coordinates(circle_points, color,label=label)
+    labels.append(label)
     
     # 円を描画（色を半径ごとに変更）
     circle = plt.Circle((0.5, 0), radius, color=color, fill=False)
@@ -40,11 +42,21 @@ plot_wing_at_coordinates([(0, 0)], origin_color)
 # 角度5度の矢印を描画（左下から伸びる）
 arrow_angle = math.radians(5)  # 角度をラジアンに変換
 arrow_length = 3  # 矢印の長さ
-plt.arrow(-6, -6, arrow_length * math.cos(arrow_angle), arrow_length * math.sin(arrow_angle), head_width=0.2, head_length=0.3, fc='purple', ec='purple')
+plt.arrow(-3, -3, arrow_length * math.cos(arrow_angle), arrow_length * math.sin(arrow_angle), head_width=0.2, head_length=0.3, fc='purple', ec='purple')
+
+# ラベルの追加
+# labels = [f'r={radius}' for radius in radii] + [r'$U_\infty$']
+
+# レジェンドを追加
+plt.legend(labels, loc='upper right')
+
+# プロット範囲の設定
+# plt.xlim(-7, )  # x軸の範囲
+plt.ylim(-5, 5)  # y軸の範囲
 
 # グラフの設定
 plt.axis('equal')
-# plt.gca().set_aspect('equal', adjustable='box')
+plt.gca().set_aspect('equal', adjustable='box')
 
 # グラフを保存して表示
 plt.savefig('naca_positions_colored.png')
