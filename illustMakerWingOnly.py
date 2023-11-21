@@ -3,7 +3,8 @@ import numpy as np
 import math
 
 # 翼の形状データを読み込む
-wing_shape = np.loadtxt('wing_shape.dat')
+# wing_shape = np.loadtxt('wing_shape.dat')
+wing_shape = np.loadtxt('naca0012_sharpTE.dat')
 
 # 座標リストを設定する
 coordinates  = [(0, 0),  (0, 1),   (1, 0),  (-1, 0),  (0, -1),  (1/math.sqrt(2), 1/math.sqrt(2)),  (-1/math.sqrt(2), 1/math.sqrt(2)),  (1/math.sqrt(2), -1/math.sqrt(2)),  (-1/math.sqrt(2), -1/math.sqrt(2))]   # ここに翼の形を配置する座標を入れます
