@@ -37,9 +37,14 @@ for radius, color in zip(radii, colors):
 origin_color = 'black'
 plot_wing_at_coordinates([(0, 0)], origin_color)
 
+# 角度5度の矢印を描画（左下から伸びる）
+arrow_angle = math.radians(5)  # 角度をラジアンに変換
+arrow_length = 3  # 矢印の長さ
+plt.arrow(-6, -6, arrow_length * math.cos(arrow_angle), arrow_length * math.sin(arrow_angle), head_width=0.2, head_length=0.3, fc='purple', ec='purple')
+
 # グラフの設定
 plt.axis('equal')
-plt.gca().set_aspect('equal', adjustable='box')
+# plt.gca().set_aspect('equal', adjustable='box')
 
 # グラフを保存して表示
 plt.savefig('naca_positions_colored.png')
